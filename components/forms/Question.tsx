@@ -21,6 +21,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
+import { toast } from "../ui/use-toast";
 
 interface Props {
   type?: string;
@@ -63,6 +64,10 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
 
         router.push(`/question/${parsedQuestionDetails._id}`);
       } else {
+        if (!mongoUserId) {
+          throw new Error("User not authenticated");
+        }
+        
         await createQuestion({
           title: values.title,
           content: values.explanation,
@@ -74,6 +79,12 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
         router.push("/");
       }
     } catch (error) {
+      console.error("Error submitting question:", error);
+      toast({
+        title: "Error submitting question",
+        description: error instanceof Error ? error.message : "Something went wrong",
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
