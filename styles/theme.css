@@ -85,11 +85,11 @@
   }
 
   .light-border {
-    border-color: #60a5fa;
+    border-color: #64f2d1;
   }
 
   .light-border-2 {
-    border-color: #60a5fa !important;
+    border-color: #64f2d1 !important;
   }
 
   .h1-bold {
@@ -185,7 +185,7 @@
   }
 
   .primary-gradient {
-    background: #33e0ff;
+    background: #64f2d1;
   }
 
   .dark-gradient {

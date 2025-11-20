@@ -21,12 +21,12 @@ module.exports = {
         background: "#000000",
         foreground: "#ffffff",
         primary: {
-          DEFAULT: "#60a5fa",
+          DEFAULT: "#64f2d1",
           foreground: "#000000",
-          500: "#60a5fa",
-          100: "#dbeafe",
+          500: "#64f2d1",
+          100: "#d1f9f1",
         },
-        border: "#60a5fa",
+        border: "#64f2d1",
         secondary: "#6b7b8c",
         glow: "#EBB800",
         card: {
@@ -49,8 +49,8 @@ module.exports = {
           DEFAULT: "#dc2626",
           foreground: "#ffffff",
         },
-        input: "#1e90a0",
-        ring: "#33e0ff",
+        input: "#64f2d1",
+        ring: "#64f2d1",
         dark: {
           100: "#000000",
           200: "#0F1117",

@@ -314,7 +314,7 @@ export async function getSavedQuestions(params: GetSavedQuestionParams) {
     });
 
     if (!user) {
-      throw new Error("User not found");
+      return { questions: [], isNext: false };
     }
 
     const savedQuestions = user.saved;
