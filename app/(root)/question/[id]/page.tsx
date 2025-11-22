@@ -15,6 +15,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { ArticleJsonLd } from "next-seo";
 
 export async function generateMetadata({
   params,
@@ -44,6 +45,19 @@ const Page = async ({ params, searchParams }: URLProps) => {
 
   return (
     <>
+      <ArticleJsonLd
+        type="BlogPosting"
+        headline={result.title}
+        url={`${process.env.NEXT_PUBLIC_SERVER_URL || 'https://4rm.vercel.app'}/question/${params.id}`}
+        datePublished={result.createdAt.toISOString()}
+        author={{
+          "@type": "Person",
+          name: result.author.name,
+          url: `${process.env.NEXT_PUBLIC_SERVER_URL || 'https://4rm.vercel.app'}/profile/${result.author.clerkId}`,
+        }}
+        image={result.author.picture}
+        description={result.content.replace(/<[^>]*>/g, '').substring(0, 160)}
+      />
       <div className="flex-start w-full flex-col">
         <div className="flex w-full flex-col-reverse justify-between gap-5 sm:flex-row sm:items-center sm:gap-2">
           <Link
