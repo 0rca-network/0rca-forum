@@ -30,7 +30,7 @@
     "html-react-parser": "^5.1.10",
     "mongodb": "^6.7.0",
     "mongoose": "^8.4.1",
-    "next": "14.2.3",
+    "next": "14.2.35",
     "next-seo": "^7.0.1",
     "prettier": "^3.2.5",
     "prismjs": "^1.29.0",
